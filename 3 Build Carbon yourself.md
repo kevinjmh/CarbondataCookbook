@@ -24,3 +24,7 @@ Clone Carbondata project from Apache github repository. Recommand to fork the pr
 ```
 mvn -DskipTests -Pspark-2.2 -Dspark.version=2.2.1 clean package
 ```
+
+## Test
+Submit the jar file you built and run.
+

@@ -10,14 +10,18 @@ Recommand:
 - Linux OS
 - JDK 7
 - Hadoop 2.7.2
-- Spark 2.2
+- Spark 2.3
 
 Please ensure that HDFS, MapReduce and Spark is working normally. You can check it by running example job, such as `Word Count` for MapReduce and `PI calculation` for Spark.
 
 Also, you need to prepare `carbon.properties` file as `https://github.com/apache/carbondata/tree/master/conf/carbon.properties.template`
 
+You can config `carbon.properties.filepath` in spark's  `spark-defaults.conf` file, or set `extraJavaOptions` when submit application.
+Please ensure `carbon.properties` file can be distributed to each executor, else parameters will not take effect.
+
+
 ## 3. Run Carbon
-We can submit Carbon assembly jar as a spark application to create `CarbonThriftServer`, and then use `beeline` to connect.
+We can submit the assembly jar file as a spark application to create `CarbonThriftServer`, and then use `beeline` to connect.
 
 > Format
 ```
